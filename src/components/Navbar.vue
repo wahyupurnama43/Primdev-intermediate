@@ -18,7 +18,7 @@
 					<div class="collapse navbar-collapse" id="navbarNav">
 						<ul class="navbar-nav ms-md-auto">
 							<li class="nav-item">
-								<router-link to="" class="nav-link active">Movie</router-link>
+								<router-link to="/" class="nav-link active">Movie</router-link>
 							</li>
 							<li class="nav-item">
 								<router-link to="/tv" class="nav-link active">Tv</router-link>
