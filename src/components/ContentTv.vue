@@ -1,5 +1,5 @@
 <template>
-	<h1 class="text-center mt-3">Movie Time</h1>
+	<h1 class="text-center mt-3">TV Time</h1>
 	<div class="d-flex justify-content-center align-center content-center mt-5">
 		<div class="container row">
 			<div class="col-md-6" v-for="movie in movies" :key="movie.imdb_id">
@@ -97,8 +97,8 @@ export default {
 
 			setTimeout(() => {
 				this.loading = true;
-				axios.get("https://api.themoviedb.org/3/movie/" + Id + "?api_key=cb3406412d3b78380af04124cf61b535&append_to_response=videos")
-					.then((res) => (this.trailer = res.data.videos.results[1]))
+				axios.get("https://api.themoviedb.org/3/tv/" + Id + "/videos?api_key=cb3406412d3b78380af04124cf61b535&append_to_response=videos")
+					.then((res) => (this.trailer = res.data.results[1]))
 					.catch((err) => console.log(err));
 			}, 1000);
 		},
@@ -118,7 +118,7 @@ export default {
 	// 	},
 	// },
 	mounted() {
-		axios.get("https://api.themoviedb.org/3/movie/popular?api_key=cb3406412d3b78380af04124cf61b535")
+		axios.get("https://api.themoviedb.org/3/tv/popular?api_key=cb3406412d3b78380af04124cf61b535")
 			.then((res) => (this.movies = res.data.results))
 			.catch((err) => console.log(err));
 	},
